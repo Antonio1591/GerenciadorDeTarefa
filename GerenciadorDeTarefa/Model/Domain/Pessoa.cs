@@ -1,9 +1,12 @@
 ﻿using GerenciadorDeTarefa.Domain.Model;
+using System.ComponentModel.DataAnnotations;
 
 namespace GerenciadorDeTarefa.Domain.Model
 {
     public class Pessoa
     {
+        protected Pessoa() { }
+        [Key]
         public int IdPessoa { get; private set; }
         public string PessoaNome { get; private set; }
         public string PessoaSex { get; private set; }

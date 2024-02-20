@@ -2,6 +2,7 @@
 {
     public class Tarefa
     {
+        protected Tarefa() { }
         public int TarefaId { get; private set; }
         public Pessoa ResponsavelTarefa { get; private set; }
         public string TarefaDescriscao { get; private set; }
