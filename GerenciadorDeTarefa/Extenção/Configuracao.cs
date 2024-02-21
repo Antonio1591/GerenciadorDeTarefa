@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using GerenciadorDeTarefa.Infrastructure.Data;
+using Microsoft.EntityFrameworkCore;
 
 
 namespace GerenciadorDeTarefa.Extenção

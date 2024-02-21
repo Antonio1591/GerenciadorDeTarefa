@@ -7,6 +7,25 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Data\**" />
+    <Compile Remove="Model\**" />
+    <Compile Remove="Repositorio\**" />
+    <Compile Remove="Services\**" />
+    <Content Remove="Data\**" />
+    <Content Remove="Model\**" />
+    <Content Remove="Repositorio\**" />
+    <Content Remove="Services\**" />
+    <EmbeddedResource Remove="Data\**" />
+    <EmbeddedResource Remove="Model\**" />
+    <EmbeddedResource Remove="Repositorio\**" />
+    <EmbeddedResource Remove="Services\**" />
+    <None Remove="Data\**" />
+    <None Remove="Model\**" />
+    <None Remove="Repositorio\**" />
+    <None Remove="Services\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="EFCore.NamingConventions" Version="8.0.3" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.2">
@@ -22,10 +41,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Data\Mapping\" />
-    <Folder Include="Model\Mapping\" />
-    <Folder Include="Repositorio\" />
-    <Folder Include="Services\" />
+    <ProjectReference Include="..\GerenciadorDeTarefa.Aplicattion\GerenciadorDeTarefa.Aplicattion.csproj" />
+    <ProjectReference Include="..\GerenciadorDeTarefa.Infrastructure\GerenciadorDeTarefa.Infrastructure.csproj" />
+    <ProjectReference Include="..\GerendiadorDeTarefa.Domain\GerendiadorDeTarefa.Domain.csproj" />
   </ItemGroup>
 
 </Project>
