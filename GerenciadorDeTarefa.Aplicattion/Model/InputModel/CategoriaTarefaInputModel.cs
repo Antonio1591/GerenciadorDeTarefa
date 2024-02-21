@@ -1,4 +1,4 @@
-﻿using GerendiadorDeTarefa.Domain.categoriaTarefa;
+﻿using GerendiadorDeTarefa.Domain.categoriatarefa;
 using GerendiadorDeTarefa.Domain.tarefa;
 
 namespace GerenciadorDeTarefa.Aplicattion.Model.InputModel
