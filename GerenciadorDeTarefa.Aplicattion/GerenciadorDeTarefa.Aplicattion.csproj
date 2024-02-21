@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GerenciadorDeTarefa.Infrastructure\GerenciadorDeTarefa.Infrastructure.csproj" />
+    <ProjectReference Include="..\GerendiadorDeTarefa.Domain\GerendiadorDeTarefa.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Model\Mapping\" />
+  </ItemGroup>
+
+</Project>

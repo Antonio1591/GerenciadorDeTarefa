@@ -1,15 +1,14 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace GerenciadorDeTarefa.Domain.Model
+namespace GerendiadorDeTarefa.Domain.categoriatarefa
 {
     public class CategoriaTarefa
     {
-        protected CategoriaTarefa(){ }
+        protected CategoriaTarefa() { }
 
         [Key]
         public int idCategoriaTarefa { get; private set; }
         public EnumCategoriaTarefa EnumCategoriaTarefa { get; private set; }
         public string CategoriaTarefaDescricao { get; private set; }
-
     }
 }
