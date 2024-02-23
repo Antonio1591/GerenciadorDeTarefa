@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GerendiadorDeTarefa.Domain.prioridadetarefa
+namespace GerendiadorDeTarefa.Domain
 {
     public enum EnumPrioridadeTarefa
     {

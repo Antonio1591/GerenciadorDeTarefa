@@ -1,4 +1,7 @@
-﻿using GerenciadorDeTarefa.Infrastructure.Data;
+﻿using GerenciadorDeTarefa.Aplicattion.Services;
+using GerenciadorDeTarefa.Infrastructure.Data;
+using GerenciadorDeTarefa.Infrastructure.Repositorio;
+using GerendiadorDeTarefa.Domain.Services;
 using Microsoft.EntityFrameworkCore;
 
 
@@ -16,7 +19,12 @@ namespace GerenciadorDeTarefa.Extenção
 
         public static void InjecaoDependencia(this IServiceCollection builder)
         {
-
+            builder.AddScoped<ITarefaService, TarefaService>();
+            builder.AddScoped<ITarefaRepository, TarefaRepository>();
+            builder.AddScoped<ITarefaServicesDomain, TarefaServicesDomain>();
+            builder.AddScoped<IPessoaRepository, PessoaRepository>();
+            builder.AddScoped<IPessoaService, PessoaService>();
+            builder.AddScoped<IPessoaServiceDomain, PessoaServiceDomain>(); 
         }
     }
 }

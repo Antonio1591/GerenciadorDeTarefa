@@ -1,3 +1,7 @@
+using GerenciadorDeTarefa.Aplicattion.Model.InputModel;
+using GerenciadorDeTarefa.Aplicattion.Model.ViewModel;
+using GerenciadorDeTarefa.Aplicattion.RespostaApi;
+using GerenciadorDeTarefa.Aplicattion.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GerenciadorDeTarefa.Controllers
@@ -6,13 +10,22 @@ namespace GerenciadorDeTarefa.Controllers
     [Route("[controller]")]
     public class GerenciadorDeTarefasController : ControllerBase
     {
+        private readonly ITarefaService _tarefaService;
 
-       /* [httppost("cadastrartarefa")]
-        public task<cadastrarmovimentacao> cadastramovimentacao()
+        [HttpPost("cadastrartarefa")]
+        public ActionResult<RespostaApi<bool>> strarTarefa(TarefaInputModel tarefaInputModel)
         {
-            
+            var cadastratarefa =  _tarefaService.CadastrarTarefa(tarefaInputModel);
+
+            if (cadastratarefa.Erro)
+            {
+                return BadRequest(cadastratarefa.MensagemErro);
+            }
+
+           return Ok();
+
         }
-       */
-        
+
+
     }
 }

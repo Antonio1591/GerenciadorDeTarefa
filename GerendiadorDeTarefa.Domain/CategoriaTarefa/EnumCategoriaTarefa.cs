@@ -1,10 +1,13 @@
-﻿namespace GerendiadorDeTarefa.Domain.categoriatarefa
+﻿using System.ComponentModel;
+
+namespace GerendiadorDeTarefa.Domain
 {
+    [DefaultValue(EnumCategoriaTarefa.Outros)]
     public enum EnumCategoriaTarefa
     {
         Trabalho =0,
         Estudo =1,
-        Pessoal =2,
+        Viagem = 2,
         DesenvolvimentoPessoal =3,
         Saude =4, 
         Financas =5, 
@@ -16,8 +19,7 @@
         Projeto =11,
         Tecnologia =12,
         Familia =13,
-        Viagem =14,
-        Outro = 15
+        Outros = 14
 
     }
 }

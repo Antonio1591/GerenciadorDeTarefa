@@ -1,9 +1,4 @@
-﻿using GerendiadorDeTarefa.Domain.tarefa;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using GerendiadorDeTarefa.Domain;
 
 namespace GerenciadorDeTarefa.Aplicattion.Model.ViewModel
 {

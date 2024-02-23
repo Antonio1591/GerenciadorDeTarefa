@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace GerendiadorDeTarefa.Domain.tarefa
+namespace GerendiadorDeTarefa.Domain
 {
     public enum EnumStatusTarefa
     {
