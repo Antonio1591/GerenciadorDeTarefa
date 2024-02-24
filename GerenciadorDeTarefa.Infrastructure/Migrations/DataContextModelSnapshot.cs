@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace GerenciadorDeTarefa.Migrations
+namespace GerenciadorDeTarefa.Infrastructure.Migrations
 {
     [DbContext(typeof(DataContext))]
     partial class DataContextModelSnapshot : ModelSnapshot
@@ -31,8 +31,8 @@ namespace GerenciadorDeTarefa.Migrations
                         .HasColumnType("longtext")
                         .HasColumnName("cpf");
 
-                    b.Property<DateOnly>("DataNascimento")
-                        .HasColumnType("date")
+                    b.Property<DateTime>("DataNascimento")
+                        .HasColumnType("datetime(6)")
                         .HasColumnName("data_nascimento");
 
                     b.Property<string>("PessoaNome")

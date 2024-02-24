@@ -11,8 +11,4 @@
     <ProjectReference Include="..\GerendiadorDeTarefa.Domain\GerendiadorDeTarefa.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Model\Mapping\" />
-  </ItemGroup>
-
 </Project>

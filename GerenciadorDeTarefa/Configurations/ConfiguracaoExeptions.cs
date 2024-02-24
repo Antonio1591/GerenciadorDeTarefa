@@ -22,9 +22,9 @@ namespace GerenciadorDeTarefa.Extenção
             builder.AddScoped<ITarefaService, TarefaService>();
             builder.AddScoped<ITarefaRepository, TarefaRepository>();
             builder.AddScoped<ITarefaServicesDomain, TarefaServicesDomain>();
-            builder.AddScoped<IPessoaRepository, PessoaRepository>();
             builder.AddScoped<IPessoaService, PessoaService>();
-            builder.AddScoped<IPessoaServiceDomain, PessoaServiceDomain>(); 
+            builder.AddScoped<IPessoaRepository, PessoaRepository>();
+            builder.AddScoped<IPessoaServiceDomain, PessoaServiceDomain>();
         }
     }
 }

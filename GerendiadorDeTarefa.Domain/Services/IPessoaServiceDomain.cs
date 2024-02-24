@@ -9,44 +9,65 @@ namespace GerendiadorDeTarefa.Domain.Services
 {
     public interface IPessoaServiceDomain
     {
-        public RespostaDomain<Pessoa> CriaPessoa(PessoaInputModelDomain input);
-        public Task<RespostaDomain<Pessoa>> EditarTarefa(PessoaInputModelDomain input);
-        public Task<RespostaDomain<Pessoa>> DeletarTarefa(PessoaInputModelDomain input);
+        public RespostaDomain<Pessoa> CriarPessoa(PessoaInputModelDomain input);
+        public RespostaDomain<bool> BuscarPessoaId(int id);
+        public Task<RespostaDomain<Pessoa>> EditarPessoa(PessoaInputModelDomain input);
+        public Task<RespostaDomain<Pessoa>> DeletarPessoa(PessoaInputModelDomain input);
 
     }
     public class PessoaServiceDomain : IPessoaServiceDomain
     {
-        public RespostaDomain<Pessoa> CriarTarefa(PessoaInputModelDomain input)
+        public RespostaDomain<Pessoa> CriarPessoa(PessoaInputModelDomain input)
         {
-            //var cadastrartarefa = new Tarefa(input.ResponsavelTarefa, input.TarefaDescriscao, input.DataInicio, input.DataConclusaoEsperada, input.EnumCategoriaTarefa, input.CategoriaTarefaDescricao, input.EnumPrioridadeEnum, input.PrioridadeDescriscao, input.Status, input.TarefaConcluida);
-            //if (!cadastrartarefa.EhValido)
-            //{
-            //    return new RespostaDomain<Tarefa>
-            //    {
-            //        MensagemErro = cadastrartarefa.Erros,
-            //        Erro = true
+            var PessoaInput = new Pessoa(input.PessoaNome, input.CPF, input.DataNascimento, input.Telefone);
+            if (!PessoaInput.EhValido)
+            {
+                return new RespostaDomain<Pessoa>
+                {
+                    MensagemErro = PessoaInput.Erros,
+                    Erro = true
 
-            //    };
-            //}
-            //else
-            //{
-            //    return new RespostaDomain<Tarefa>
-            //    {
-            //        Dados = cadastrartarefa,
-            //        Erro = false
+                };
+            }
+            else
+            {
+                return new RespostaDomain<Pessoa>
+                {
+                    Dados = PessoaInput,
+                    Erro = false
 
-            //    };
+                };
 
-            //}
+            }
 
         }
 
-        public Task<RespostaDomain<Pessoa>> DeletarTarefa(PessoaInputModelDomain input)
+        public RespostaDomain<bool> BuscarPessoaId(int id)
+        {
+            if (id <= 0)
+            {
+                return new RespostaDomain<bool>
+                {
+                    Erro = true,
+                    MensagemErro = new List<string> { "Digite um Id Válido para continuar sua consulta." }
+                };
+            }
+            else
+            {
+                return new RespostaDomain<bool>
+                {
+                    Dados = true
+                };
+            }
+
+
+        }
+        public Task<RespostaDomain<Pessoa>> EditarPessoa(PessoaInputModelDomain input)
         {
             throw new NotImplementedException();
         }
 
-        public Task<RespostaDomain<Pessoa>> EditarTarefa(PessoaInputModelDomain input)
+        public Task<RespostaDomain<Pessoa>> DeletarPessoa(PessoaInputModelDomain input)
         {
             throw new NotImplementedException();
         }

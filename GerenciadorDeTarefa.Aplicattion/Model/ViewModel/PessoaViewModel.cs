@@ -8,5 +8,8 @@ namespace GerenciadorDeTarefa.Aplicattion.Model.ViewModel
 {
     public class PessoaViewModel
     {
+        public string PessoaNome { get;  set; }
+        public DateTime DataNascimento { get;  set; }
+        public string Telefone { get;  set; }
     }
 }

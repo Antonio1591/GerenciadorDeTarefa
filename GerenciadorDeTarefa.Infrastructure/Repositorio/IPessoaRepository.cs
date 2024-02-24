@@ -1,20 +1,15 @@
 ﻿using GerenciadorDeTarefa.Infrastructure.Data;
 using GerendiadorDeTarefa.Domain;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GerenciadorDeTarefa.Infrastructure.Repositorio
 {
     public interface IPessoaRepository
     {
-        public Task<bool> CadastrarPessoa(Pessoa tarefa);
+        public bool CadastrarPessoa(Pessoa tarefa);
         public Task<bool> AtualizarPessoa(Pessoa tarefa);
         public IEnumerable<Pessoa> BuscarPessoas();
-        public Task<Pessoa> BuscarPessoaId(int id);
+        public Pessoa BuscarPessoaId(int id);
     }
 
     public class PessoaRepository : IPessoaRepository
@@ -26,10 +21,11 @@ namespace GerenciadorDeTarefa.Infrastructure.Repositorio
             _context = dataCotnext;
         }
 
-        public async Task<bool> CadastrarPessoa(Pessoa tarefa)
+        public bool CadastrarPessoa(Pessoa pessoa)
         {
-            await _context.AddAsync(tarefa);
-            await _context.SaveChangesAsync();
+              _context.Pessoa.Add(pessoa);
+
+             _context.SaveChanges();
             return true;
         }
 
@@ -43,13 +39,15 @@ namespace GerenciadorDeTarefa.Infrastructure.Repositorio
 
         public IEnumerable<Pessoa> BuscarPessoas()
         {
-            return _context.pessoa.ToList(); ;
+            return _context.Pessoa.ToList(); 
 
         }
 
-        public async Task<Pessoa> BuscarPessoaId(int id)
+        public Pessoa BuscarPessoaId(int id)
         {
-            return await _context.pessoa.FirstOrDefaultAsync(T => T.IdPessoa == id);
+            var pessoa =  _context.Pessoa.FirstOrDefault(I => I.IdPessoa == id);
+
+            return pessoa;
         }
 
     }

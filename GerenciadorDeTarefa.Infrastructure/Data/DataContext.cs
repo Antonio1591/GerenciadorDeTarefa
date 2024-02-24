@@ -6,8 +6,8 @@ namespace GerenciadorDeTarefa.Infrastructure.Data
     public class DataContext : DbContext
     {
         public DataContext(DbContextOptions<DataContext> options) : base(options) { }
-        public DbSet<Pessoa> pessoa { get; set; }
-        public DbSet<Tarefa> tarefa { get; set; }
+        public DbSet<Pessoa> Pessoa { get; set; }
+        public DbSet<Tarefa> Tarefa { get; set; }
 
     }
 }

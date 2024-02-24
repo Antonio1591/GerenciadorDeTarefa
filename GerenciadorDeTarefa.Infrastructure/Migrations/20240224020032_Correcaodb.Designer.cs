@@ -8,11 +8,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace GerenciadorDeTarefa.Migrations
+namespace GerenciadorDeTarefa.Infrastructure.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20240223023625_correcao_tabelas")]
-    partial class correcao_tabelas
+    [Migration("20240224020032_Correcaodb")]
+    partial class Correcaodb
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -34,8 +34,8 @@ namespace GerenciadorDeTarefa.Migrations
                         .HasColumnType("longtext")
                         .HasColumnName("cpf");
 
-                    b.Property<DateOnly>("DataNascimento")
-                        .HasColumnType("date")
+                    b.Property<DateTime>("DataNascimento")
+                        .HasColumnType("datetime(6)")
                         .HasColumnName("data_nascimento");
 
                     b.Property<string>("PessoaNome")

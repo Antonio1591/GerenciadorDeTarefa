@@ -44,13 +44,13 @@ namespace GerenciadorDeTarefa.Infrastructure.Repositorio
 
         public  IEnumerable<Tarefa> BuscarTarefas()
         {
-            return  _context.tarefa.ToList(); ;
+            return  _context.Tarefa.ToList(); ;
               
         }
 
         public async Task<Tarefa> BuscarTarefaId(int id)
         {
-           return await _context.tarefa.FirstOrDefaultAsync(T=>T.TarefaId == id);
+           return await _context.Tarefa.FirstOrDefaultAsync(T=>T.TarefaId == id);
         }
 
     }

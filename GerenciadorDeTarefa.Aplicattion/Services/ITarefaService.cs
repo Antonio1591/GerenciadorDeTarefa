@@ -18,6 +18,13 @@ namespace GerenciadorDeTarefa.Aplicattion.Services
     {
         private readonly ITarefaServicesDomain _tarefaservicesdomain;
         private readonly ITarefaRepository _tarefasrepository;
+
+        public TarefaService(ITarefaServicesDomain tarefaservicesdomain, ITarefaRepository tarefasrepository)
+        {
+            _tarefaservicesdomain = tarefaservicesdomain;
+            _tarefasrepository = tarefasrepository;
+        }
+
         public RespostaApi<bool> CadastrarTarefa(TarefaInputModel input)
         {
             var inputDomain = new TarefaInputModelDomain
@@ -37,6 +44,8 @@ namespace GerenciadorDeTarefa.Aplicattion.Services
             };
 
             var cadastrartarefadomain = _tarefaservicesdomain.CriarTarefa(inputDomain);
+
+
            if(cadastrartarefadomain.Erro)
             {
                 return new RespostaApi<bool>

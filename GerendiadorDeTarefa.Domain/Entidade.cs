@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace GerendiadorDeTarefa.Domain
 {
+    
     public abstract class Entidade
     {
         public List<string> Erros = new List<string>();

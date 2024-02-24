@@ -31,7 +31,7 @@ namespace GerendiadorDeTarefa.Domain
 
 
 
-        public int TarefaId { get; private set; }
+        public int TarefaId { get;  set; }
         public Pessoa ResponsavelTarefa { get; private set; }
         public string TarefaDescriscao { get; private set; }
         public DateTime DataInicio { get; private set; }
@@ -100,10 +100,10 @@ namespace GerendiadorDeTarefa.Domain
             if (string.IsNullOrEmpty(tarefadescriscao))
                 AddErro("Descrição da tarefa não pode ser vazia.");
 
-            if (DataInicio < DateTime.Now.AddMonths(-12))
+            if (datainicio < DateTime.Now.AddMonths(-12))
                 AddErro("Data de início não pode ter um inicio de 1 ano atrás");
 
-            if (DataInicio > dataconclusaoesperada)
+            if (datainicio > dataconclusaoesperada)
                 AddErro("Data de início não pode ser posterior à data de conclusão esperada.");
 
             if (!Enum.IsDefined(typeof(EnumCategoriaTarefa), enumCategoriaTarefa))

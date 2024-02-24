@@ -1,5 +1,4 @@
 using GerenciadorDeTarefa.Aplicattion.Model.InputModel;
-using GerenciadorDeTarefa.Aplicattion.Model.ViewModel;
 using GerenciadorDeTarefa.Aplicattion.RespostaApi;
 using GerenciadorDeTarefa.Aplicattion.Services;
 using Microsoft.AspNetCore.Mvc;
